@@ -1,5 +1,5 @@
 <div class="animated fadeIn fast">
-    <h1>{{ heroe.nombre }}<small> {{ heroe.aparicion }}</small></h1>
+    <h1>{{ heroe.nombre | uppercase }}<small> ({{ heroe.aparicion | date:'y' }})</small></h1>
     <hr>
     <div class="row">
         <div class="col-md-4">
@@ -14,7 +14,8 @@
                 {{ heroe.bio }}
             </p>
             <div>
-                <img src="DC o MARVEL" alt="">
+                <img *ngIf="heroe.casa == 'Marvel' "  class="img-logo" src="assets/img/marvel-logo.png" alt="">
+                <img *ngIf="heroe.casa=='DC' " class="img-logo" src="assets/img/dc-logo.jpg" alt="">
             </div>
         </div>
     </div>
